@@ -23,7 +23,7 @@ public class SignIn {
  
  // forgot password
  driver.findElement(By.linkText("Forgot your password?")).click();
- Thread.sleep(2000);
+ Thread.sleep(2000); //thread.seep
  
  
  driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("abhay"); //using Xpath
@@ -33,7 +33,15 @@ public class SignIn {
  driver.findElement(By.xpath("//form/input[3]")).sendKeys("9876435789"); // x path using only tags
  driver.findElement(By.cssSelector(".reset-pwd-btn")).click(); //CSS selector using DotClassName
   System.out.print(driver.findElement(By.cssSelector("form p")).getText());// suing parent tag space child tag
- 
+ //
+ //trying  to login
+  driver.findElement(By.xpath("//div[contains(@class,'pwd')]/button[1]")).click();// x path,dynamic,child parent relationship
+  Thread.sleep(1000);// to stabilizing the view
+ driver.findElement(By.cssSelector("#inputUsername")).sendKeys("Rahul"); // using #Id
+ driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");// TagName[Attribute* ="val"]  for dynamic
+  driver.findElement(By.id("chkboxOne")).click();
+  driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click(); // dynamic x path
+  
 	}
 
 }
