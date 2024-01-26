@@ -37,9 +37,10 @@ String linkText = "LET'S TALK →";
 WebElement elemente = driver.findElement(By.linkText(linkText));
 elemente.click();
 
-
+System.out.println("now you are the supoort page");
 WebElement paragraph = driver.findElement(By.xpath("//div[@data-id='33b10ad9']/div[@class='elementor-widget-container']/p"));
 //System.out.println(paragraph.getText());
+
 String paragraph_=paragraph.getText();
 
 Assert.assertEquals(paragraph_,"We’d love to hear from you and see how we can help.");
@@ -47,11 +48,11 @@ Assert.assertEquals(paragraph_,"We’d love to hear from you and see how we can 
 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 jsExecutor.executeScript("window.scrollBy(0, 490)");
 driver.findElement(By.xpath("//input[@id='your-name']")).click();
-System.out.println("hh");
+
 Thread.sleep(1000);
 
 driver.findElement(By.xpath("//input[@id='your-name']")).sendKeys("automation testing 1234 56 checking");
-System.out.println("name is done");
+
 
 driver.switchTo().defaultContent();
 driver.findElement(By.xpath("//input[@id='your-email']")).click();
@@ -59,12 +60,13 @@ driver.findElement(By.xpath("//input[@id='your-email']")).sendKeys("abcdefghit@g
 driver.switchTo().defaultContent();
 
 driver.findElement(By.xpath("//input[@type='submit']")).click();
-System.out.println("form is filled");
+System.out.println("form has been  filled");
 
 WebElement thanksElement = driver.findElement(By.xpath("//div[@class='visible-only-if-sent cf7-thank-you']/h2"));
 
 String thanksText = thanksElement.getText();
 System.out.println(thanksText);
+
 	}
 
 }
