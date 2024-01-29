@@ -57,15 +57,17 @@ driver.findElement(By.xpath("//input[@id='your-name']")).sendKeys("automation te
 driver.switchTo().defaultContent();
 driver.findElement(By.xpath("//input[@id='your-email']")).click();
 driver.findElement(By.xpath("//input[@id='your-email']")).sendKeys("abcdefghit@gmail.com");
-driver.switchTo().defaultContent();
+driver.switchTo().defaultContent();//
 
 driver.findElement(By.xpath("//input[@type='submit']")).click();
-System.out.println("form has been  filled");
+System.out.println("form has been filled");
 
 WebElement thanksElement = driver.findElement(By.xpath("//div[@class='visible-only-if-sent cf7-thank-you']/h2"));
 
 String thanksText = thanksElement.getText();
 System.out.println(thanksText);
+Thread.sleep(10000);
+driver.quit();
 
 	}
 
